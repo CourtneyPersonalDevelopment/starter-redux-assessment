@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchSuggestion =
-  createAsyncThunk(/* Task 15: Complete the `createAsyncThunk()` function to load
-     a suggestion from this URL: http://localhost:3004/api/suggestion */
+  createAsyncThunk(
     'suggestion/fetchSuggestion',async () => {
     const response = await fetch('http://localhost:3004/api/suggestion');
     const data = await response.json();
@@ -32,9 +31,6 @@ const options = {
       state.loading = false;
       state.error = true;
     },
-    /* Task 16: Inside `extraReducers`, add reducers to handle all three promise 
-    lifecycle states - pending, fulfilled, and rejected -
-     for the `fetchSuggestion()` call */
   },
 };
 
