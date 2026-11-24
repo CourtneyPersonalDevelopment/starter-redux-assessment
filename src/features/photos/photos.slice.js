@@ -11,7 +11,9 @@ const options = {
   reducers: {
     addPhoto: (state, action) => {
       const nextPhotos = [...state.photos];
-      nextPhotos.unshift(action.payload);
+      const nextId =
+        state.photos.reduce((maxId, photo) => Math.max(maxId, photo.id), 0) + 1;
+      nextPhotos.unshift({ ...action.payload, id: nextId });
       state.photos = nextPhotos;
     },
     removePhoto: (state, action) => {

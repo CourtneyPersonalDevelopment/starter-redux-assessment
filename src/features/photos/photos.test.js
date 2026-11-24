@@ -2,6 +2,7 @@ import userEvent from '@testing-library/user-event';
 
 import { render, screen } from '../../test-utils';
 import App from '../../App';
+import photosReducer, { addPhoto } from './photos.slice';
 
 test('adds a dog to the list of dogs after clicking the submit button', async () => {
   render(<App />);
